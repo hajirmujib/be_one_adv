@@ -1,0 +1,38 @@
+
+BASE_URL_API = localhost/api3/api/{$endpoint}
+
+
+$endpoint : 
+
+Chat
+[GET] chat
+[GET] chat?id_service=$id_service&status=$status 
+[POST] chat          {form-data:[id_service,id_user,text,file,status[,file]]}
+[POST] chat/edit   {form-data:[id_service,id_user,text,file,status[,file]]}
+[GET] chat/delete?id_chat=$id_chat
+
+Auth
+[POST] auth/login       {form-data:[email,password]}
+[POST] auth/register    {form-data:[nama,nidn,email,password,level,no_telp,[,foto]]}
+
+Service
+[GET] penelitiain?fakultas=$fakultas&prodi=$prodi&tahunMulai=$tahunMulai&tahunSelesai=$tahunSelesai
+[GET] penelitian
+[GET] penelitian?id_penelitian=$id 
+[GET] penelitian?sumber_dana=$sumber_dana 
+[GET] penelitian?id_user=$id_user&tahun=$tahun&sumber_dana=$sumber_dana
+[GET] penelitian?sumber_dana=$sumber_dana&tahun=$tahun 
+[GET] penelitian?sumber_dana=$sumber_dana&id_user=$id_user
+[POST] penelitian             {form-data:[judul,jenis,status,sumber_dana,dana_tersedia,dana_terpakai,id_user]}
+[POST] Penelitian              {form-urlencode:[id_penelitian,judul,tahun,jenis,status,sumber_dana,id_user]}
+[GET] penelitian           {form-urlencode:[id_penelitian]}
+
+
+User
+[GET] user
+[GET] user?id_user=$id_user
+[POST] user          {form-data:[nama,nidn,email,password,level,fakultas,prodi[,foto]]}
+[POST] user/edit   {form-data:[id_users,nama,nidn,email,password,level,fakultas,prodi[,foto]]}
+[GET] user /delete?id=user=$id_user
+
+
